@@ -57,8 +57,16 @@
           <em>Try resizing the window!</em>
         </div>
         <div class="one-third column">
+          <div>
+            <button id="free">Free</button>
+            <button id="line">Line</button>
+            <button id="rectangle">Rectangle</button>
+            <button id="triangle">Triangle</button>
+            <button id="diamond">Diamond</button>
+            <button id="circle">Circle</button>
+          </div>
           <label for="line-color-input">Set Line Color</label>
-          <input class="u-full-width" type="text" value="#000000" id="line-color-input">
+          <input class="u-full-width" type="color" value="#000000" id="line-color-input">
           <label for="line-size-input">Set Line Size</label>
           <input class="u-full-width" type="number" value="5" id="line-size-input">
           <div class="row">
@@ -111,10 +119,18 @@ pad.resize(newWidth);
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="responsive-sketchpad.js"></script>
+  <script src="lib/responsive-sketchpad.js"></script>
   <script>
     var el = document.getElementById('sketchpad');
     var pad = new Sketchpad(el);
+
+    // Tools
+    document.getElementById('free').onclick = function () {pad.setTool(0)}
+    document.getElementById('line').onclick = function () {pad.setTool(1)}
+    document.getElementById('rectangle').onclick = function () {pad.setTool(2)}
+    document.getElementById('triangle').onclick = function () {pad.setTool(3)}
+    document.getElementById('diamond').onclick = function () {pad.setTool(4)}
+    document.getElementById('circle').onclick = function () {pad.setTool(5)}
 
     // setLineColor
     function setLineColor(e) {
@@ -150,11 +166,6 @@ pad.resize(newWidth);
         pad.clear();
     }
     document.getElementById('clear').onclick = clear;
-
-    // resize
-    window.onresize = function (e) {
-      pad.resize(el.offsetWidth);
-    }
   </script>
 
 <!-- End Document

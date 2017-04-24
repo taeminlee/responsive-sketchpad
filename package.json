@@ -4,6 +4,9 @@
   "description": "A completely responsive sketchpad based on HTML5 canvas",
   "main": "responsive-sketchpad.js",
   "scripts": {
+    "build": "babel src/ -d lib/",
+    "flow": "flow",
+    "prepublish": "npm run build",
     "test": "jasmine"
   },
   "repository": {
@@ -23,6 +26,10 @@
   },
   "homepage": "https://github.com/theisensanders-wf/responsive-sketchpad#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.44.0",
     "jasmine": "^2.3.2"
   }
 }

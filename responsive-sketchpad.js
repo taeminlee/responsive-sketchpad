@@ -237,7 +237,7 @@
                 y: cursor.y
             });
             that.redraw();
-			
+
             if (that.onDrawEnd) that.onDrawEnd();
         }
 
@@ -251,7 +251,7 @@
         canvas.addEventListener('mouseup', endLine);
         canvas.addEventListener('mouseleave', endLine);
         canvas.addEventListener('touchend', endLine);
-		
+
         if (typeof opts.onDrawEnd === 'function') {
             this.onDrawEnd = opts.onDrawEnd;
         }
